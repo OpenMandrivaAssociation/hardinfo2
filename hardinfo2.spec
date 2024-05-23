@@ -18,7 +18,7 @@ BuildRequires:  pkgconfig(json-glib-1.0)
 BuildRequires:  pkgconfig(libsoup-3.0)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(zlib)
-
+Requires:	      pciutils
 Recommends:     lm_sensors
 Recommends:     sysbench
 Recommends:     lsscsi
