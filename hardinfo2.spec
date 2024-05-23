@@ -8,6 +8,7 @@ URL:            https://github.com/hardinfo2/hardinfo2
 Source0:        https://github.com/hardinfo2/hardinfo2/archive/release-%{version}/hardinfo2-release-%{version}.tar.gz
 
 BuildRequires:  cmake
+BuildRequires:  gettext
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(cairo-png)
@@ -18,7 +19,7 @@ BuildRequires:  pkgconfig(json-glib-1.0)
 BuildRequires:  pkgconfig(libsoup-3.0)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(zlib)
-Requires:	      pciutils
+Requires:  pciutils
 Recommends:     lm_sensors
 Recommends:     sysbench
 Recommends:     lsscsi
