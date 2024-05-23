@@ -2,9 +2,9 @@ Name:           hardinfo2
 Version:        2.1.2
 Release:        1
 Summary:        System Information and Benchmark for Linux Systems
-Group:		      System/Kernel and hardware
+Group:          System/Kernel and hardware
 License:        GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-only
-URL:            https://github.com/hardinfo2/hardinfo2
+URL:            https://hardinfo2.org/
 Source0:        https://github.com/hardinfo2/hardinfo2/archive/release-%{version}/hardinfo2-release-%{version}.tar.gz
 
 BuildRequires:  cmake
