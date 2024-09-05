@@ -72,11 +72,14 @@ Features include:
 %{_libdir}/hardinfo2/modules/computer.so
 %{_libdir}/hardinfo2/modules/devices.so
 %{_libdir}/hardinfo2/modules/network.so
+%{_libdir}/hardinfo2/modules/qgears2
+%{_prefix}/lib/systemd/system/hardinfo2.service
 %{_datadir}/applications/hardinfo2.desktop
 %dir %{_datadir}/hardinfo2
 %{_datadir}/hardinfo2/*.ids
 %{_datadir}/hardinfo2/benchmark.data
 %{_datadir}/hardinfo2/*.json
+%{_datadir}/metainfo/org.hardinfo2.hardinfo2.metainfo.xml
 %{_datadir}/hardinfo2/pixmaps/
 %{_datadir}/icons/hicolor/256x256/apps/hardinfo2.png
 %{_mandir}/man1/hardinfo2.1*
