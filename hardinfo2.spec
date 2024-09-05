@@ -21,6 +21,7 @@ BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(zlib)
 
 # Qt5 deps, needed only for GPU OpenGL benchmark (optional)
+BuildRequires:  qmake5
 BuildRequires:  cmake(Qt5Core)
 BuildRequires:  cmake(Qt5Gui)
 BuildRequires:  cmake(Qt5Widgets)
