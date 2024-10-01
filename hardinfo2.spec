@@ -1,5 +1,5 @@
 Name:           hardinfo2
-Version:        2.1.11
+Version:        2.1.17
 Release:        1
 Summary:        System Information and Benchmark for Linux Systems
 Group:          System/Kernel and hardware
@@ -19,6 +19,14 @@ BuildRequires:  pkgconfig(json-glib-1.0)
 BuildRequires:  pkgconfig(libsoup-3.0)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(zlib)
+
+# Qt5 deps, needed only for GPU OpenGL benchmark (optional)
+BuildRequires:  qmake5
+BuildRequires:  cmake(Qt5Core)
+BuildRequires:  cmake(Qt5Gui)
+BuildRequires:  cmake(Qt5Widgets)
+BuildRequires:  cmake(Qt5OpenGL)
+
 Requires:  pciutils
 Recommends:     lm_sensors
 Recommends:     sysbench
@@ -64,11 +72,14 @@ Features include:
 %{_libdir}/hardinfo2/modules/computer.so
 %{_libdir}/hardinfo2/modules/devices.so
 %{_libdir}/hardinfo2/modules/network.so
+%{_libdir}/hardinfo2/modules/qgears2
+%{_prefix}/lib/systemd/system/hardinfo2.service
 %{_datadir}/applications/hardinfo2.desktop
 %dir %{_datadir}/hardinfo2
 %{_datadir}/hardinfo2/*.ids
 %{_datadir}/hardinfo2/benchmark.data
 %{_datadir}/hardinfo2/*.json
+%{_datadir}/metainfo/org.hardinfo2.hardinfo2.metainfo.xml
 %{_datadir}/hardinfo2/pixmaps/
-%{_datadir}/icons/hicolor/256x256/apps/hardinfo2.png
+%{_iconsdir}/hicolor/scalable/apps/hardinfo2.svg
 %{_mandir}/man1/hardinfo2.1*
