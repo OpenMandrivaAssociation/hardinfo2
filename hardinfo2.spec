@@ -81,5 +81,5 @@ Features include:
 %{_datadir}/hardinfo2/*.json
 %{_datadir}/metainfo/org.hardinfo2.hardinfo2.metainfo.xml
 %{_datadir}/hardinfo2/pixmaps/
-%{_datadir}/icons/hicolor/256x256/apps/hardinfo2.png
+#{_datadir}/icons/hicolor/256x256/apps/hardinfo2.png
 %{_mandir}/man1/hardinfo2.1*
