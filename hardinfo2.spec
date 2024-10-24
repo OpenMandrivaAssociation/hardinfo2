@@ -66,6 +66,7 @@ Features include:
 %license LICENSE
 %doc README.md
 %{_bindir}/hardinfo2
+%{_bindir}/hwinfo2_fetch_sysdata
 %dir %{_libdir}/hardinfo2
 %dir %{_libdir}/hardinfo2/modules
 %{_libdir}/hardinfo2/modules/benchmark.so
