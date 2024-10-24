@@ -1,14 +1,11 @@
 Name:           hardinfo2
-Version:        2.1.17
-Release:        2
+Version:        2.2.1
+Release:        1
 Summary:        System Information and Benchmark for Linux Systems
 Group:          System/Kernel and hardware
 License:        GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-only
 URL:            https://hardinfo2.org/
 Source0:        https://github.com/hardinfo2/hardinfo2/archive/release-%{version}/hardinfo2-release-%{version}.tar.gz
-
-# Upstream, adding OpenMandriva stuff
-Patch0:         https://github.com/hardinfo2/hardinfo2/commit/5f56a2fb22d147d99f00b5d7edadc1dfa8a657fc.patch
 
 BuildRequires:  cmake
 BuildRequires:  gettext
