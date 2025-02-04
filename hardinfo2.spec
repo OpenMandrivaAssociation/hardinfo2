@@ -1,5 +1,5 @@
 Name:           hardinfo2
-Version:        2.2.4
+Version:        2.2.7
 Release:        1
 Summary:        System Information and Benchmark for Linux Systems
 Group:          System/Kernel and hardware
@@ -30,7 +30,7 @@ BuildRequires:  cmake(Qt5OpenGL)
 Requires:  pciutils
 Recommends:     lm_sensors
 Recommends:     sysbench
-Recommends:     lsscsi
+Recommends:     gawk
 Recommends:     glxinfo
 Recommends:     mesa-demos
 Recommends:     dmidecode
