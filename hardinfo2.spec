@@ -22,9 +22,11 @@ BuildRequires:	pkgconfig(json-glib-1.0)
 BuildRequires:	pkgconfig(libdecor-0)
 BuildRequires:	pkgconfig(liblzma)
 BuildRequires:	pkgconfig(libsoup-3.0)
+BuildRequires:	pkgconfig(vulkan)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pciutils
+BuildRequires:	vulkan-headers
 
 # Qt5 is EOL, OOS & OOM!
 # Qt5 deps, needed only for GPU OpenGL benchmark (optional)
