@@ -1,42 +1,50 @@
-Name:           hardinfo2
-Version:        2.2.10
-Release:        1
-Summary:        System Information and Benchmark for Linux Systems
-Group:          System/Kernel and hardware
-License:        GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-only
-URL:            https://hardinfo2.org/
-Source0:        https://github.com/hardinfo2/hardinfo2/archive/release-%{version}/hardinfo2-release-%{version}.tar.gz
+Name:		hardinfo2
+Version:	2.2.13
+Release:	1
+Summary:	System Information and Benchmark for Linux Systems
+Group:		System/Kernel and hardware
+License:	GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-only
+URL:		https://hardinfo2.org/
+Source0:	https://github.com/hardinfo2/hardinfo2/archive/release-%{version}/hardinfo2-release-%{version}.tar.gz
 
-BuildRequires:  cmake
-BuildRequires:  gettext
-BuildRequires:  pkgconfig(gtk+-3.0)
-BuildRequires:  pkgconfig(cairo)
-BuildRequires:  pkgconfig(cairo-png)
-BuildRequires:  pkgconfig(gthread-2.0)
+BuildRequires:	cmake
+BuildRequires:	cmake(glslang)
+BuildRequires:	gettext
+BuildRequires:	glslang
+BuildRequires:	ninja
+BuildRequires:	pkgconfig(cairo)
+BuildRequires:	pkgconfig(cairo-png)
+BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gmodule-export-2.0)
-BuildRequires:  pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(json-glib-1.0)
-BuildRequires:  pkgconfig(libsoup-3.0)
-BuildRequires:  pkgconfig(x11)
-BuildRequires:  pkgconfig(zlib)
+BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(gthread-2.0)
+BuildRequires:	pkgconfig(json-glib-1.0)
+BuildRequires:	pkgconfig(libdecor-0)
+BuildRequires:	pkgconfig(liblzma)
+BuildRequires:	pkgconfig(libsoup-3.0)
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(zlib)
+BuildRequires:	pciutils
 
+# Qt5 is EOL, OOS & OOM!
 # Qt5 deps, needed only for GPU OpenGL benchmark (optional)
-BuildRequires:  qmake5
-BuildRequires:  cmake(Qt5Core)
-BuildRequires:  cmake(Qt5Gui)
-BuildRequires:  cmake(Qt5Widgets)
-BuildRequires:  cmake(Qt5OpenGL)
+# The GPU Vulkan Drawing benchmark exists and is not dependant on Qt5.
+#BuildRequires:	qmake5
+#BuildRequires:	cmake(Qt5Core)
+#BuildRequires:	cmake(Qt5Gui)
+#BuildRequires:	cmake(Qt5Widgets)
+#BuildRequires:	cmake(Qt5OpenGL)
 
-Requires:  pciutils
-Recommends:     lm_sensors
-Recommends:     sysbench
-Recommends:     gawk
-Recommends:     glxinfo
-Recommends:     mesa-demos
-Recommends:     dmidecode
-Recommends:     udisks2
-Recommends:     xdg-utils
-Recommends:     iperf3
+Requires:	pciutils
+Requires:	iperf
+Recommends:	lm_sensors
+Recommends:	sysbench
+Recommends:	gawk
+Recommends:	glxinfo
+Recommends:	mesa-demos
+Recommends:	dmidecode
+Recommends:	udisks2
+Recommends:	xdg-utils
 
 %description
 Hardinfo2 is based on hardinfo, which have not been released >10 years.
@@ -54,11 +62,14 @@ Features include:
 %autosetup -n hardinfo2-release-%{version} -p1
 
 %build
-%cmake -DCMAKE_BUILD_TYPE=Release
-%make_build
+# We're not building with Qt5 BRs, disable building qgears
+%cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+	-DHARDINFO2_QT5:BOOL=OFF \
+	-G Ninja
+%ninja_build
 
 %install
-%make_install -C build
+%ninja_install -C build
 
 %find_lang %{name}
 
@@ -73,7 +84,7 @@ Features include:
 %{_libdir}/hardinfo2/modules/computer.so
 %{_libdir}/hardinfo2/modules/devices.so
 %{_libdir}/hardinfo2/modules/network.so
-%{_libdir}/hardinfo2/modules/qgears2
+%{_libdir}/hardinfo2/modules/vkgears
 %{_prefix}/lib/systemd/system/hardinfo2.service
 %{_datadir}/applications/hardinfo2.desktop
 %dir %{_datadir}/hardinfo2
