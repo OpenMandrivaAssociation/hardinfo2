@@ -1,5 +1,5 @@
 Name:		hardinfo2
-Version:	2.2.13
+Version:	2.2.16
 Release:	1
 Summary:	System Information and Benchmark for Linux Systems
 Group:		System/Kernel and hardware
