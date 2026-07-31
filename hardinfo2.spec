@@ -1,5 +1,5 @@
 Name:		hardinfo2
-Version:	2.2.16
+Version:	2.3.1
 Release:	1
 Summary:	System Information and Benchmark for Linux Systems
 Group:		System/Kernel and hardware
@@ -61,7 +61,7 @@ Features include:
 - Online Benchmarking - compare your machine against other machines
 
 %prep
-%autosetup -n hardinfo2-release-%{version} -p1
+%autosetup -n hardinfo2-release-2.3.1 -p1
 
 %build
 # We're not building with Qt5 BRs, disable building qgears
